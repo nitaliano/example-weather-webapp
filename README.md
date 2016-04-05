@@ -1,7 +1,7 @@
 # Example Weather Webapp
 
 This project is a basic weather app built with technologies like Webpack, Babel,
-React, React Router, and Redux.  There will be a blog post exampling bits of this
+React, React Router, and Redux.  There will be a blog post explaining bits of this
 project.
 
 # Install
