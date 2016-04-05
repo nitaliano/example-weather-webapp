@@ -22,6 +22,12 @@ npm run develop
 npm run release
 ```
 
+# Start Development Server
+
+```
+node .
+```
+
 # NOTES
 * This project has only been tested on Chrome. I guarantee nothing on other browser
 environments.
