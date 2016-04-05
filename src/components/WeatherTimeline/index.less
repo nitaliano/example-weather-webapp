@@ -1,0 +1,53 @@
+@import '../App/variables.less';
+
+.weather-timeline-cnt {
+  clear: both;
+  padding-top: @padding-xs;
+
+  .weather-timeline {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    padding-left: @padding-xs;
+    padding-right: @padding-xs;
+
+    @media (min-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .weather-timeline-item {
+      cursor: pointer;
+      width: 50%;
+      text-align: center;
+      float:left;
+      border-bottom: 2px solid transparent;
+      transition: width 0.2s ease-in-out;
+
+      &[data-active=true] {
+        border-bottom: 2px solid @pink;
+      }
+
+      &:hover {
+        border-bottom: 2px solid rgba(red(@pink), green(@pink), blue(@pink), 0.5);
+      }
+
+      @media (min-width: 768px) {
+        width: 14.28%;
+      }
+    }
+
+    .weather-timeline-link {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+
+      &, &:hover {
+        color: @dark-font-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

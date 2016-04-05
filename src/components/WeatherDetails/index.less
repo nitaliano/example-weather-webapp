@@ -1,0 +1,45 @@
+@import '../App/variables.less';
+
+.weather-details-cnt {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  display: table;
+  border: 1px solid @grey;
+
+  .weather-details-title, .weather-details-day, .weather-details-weather-desc, .weather-details-humidity {
+    padding-top: @padding-step;
+  }
+
+  .weather-details-bg {
+    background-color: @light-grey;
+    padding: @padding-xs;
+  }
+
+  .weather-details-meta-cnt {
+    display: table;
+    width: 100%;
+    padding-top: @padding-md;
+
+    .weather-icon, .weather-details-temp {
+      font-size: 2 * @font-size-large;
+    }
+
+    .weather-details-meta, .weather-details-temp {
+      margin-left: @padding-sm;
+    }
+
+    .weather-details-meta {
+      clear: left;
+      padding-top: @padding-sm;
+      font-size: @font-size-large;
+      margin-left: 0;
+
+      @media (min-width: 768px) {
+        padding-top: 0;
+        clear: none;
+        float: right;
+      }
+    }
+  }
+}

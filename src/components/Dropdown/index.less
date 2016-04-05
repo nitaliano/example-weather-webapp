@@ -1,0 +1,26 @@
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+
+  &[data-hidden=true] {
+    display: block !important;
+    visibility: visible !important;
+    transform: scale(0);
+  }
+
+  &.open-from-left {
+    transform-origin: 15% 0;
+  }
+
+  &.open-from-right {
+    transform-origin: 85% 0;
+  }
+
+  .dropdown-item {
+    cursor: pointer;
+    user-select: none;
+  }
+}

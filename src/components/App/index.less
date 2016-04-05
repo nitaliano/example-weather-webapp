@@ -1,0 +1,111 @@
+@import './variables.less';
+@import '~font-awesome/less/font-awesome.less';
+@import '~weather-icons/less/weather-icons.less';
+
+@font-face {
+  font-family: Colfax;
+  src: url('@{app-font}Colfax-Regular.otf') format('opentype'),
+  url('@{app-font}Colfax-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Colfax;
+  color: @dark-font-color;
+  background-color: @body-bg;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+[data-hidden=true] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#app, .app-cnt {
+  height: 100%;
+
+  @media (min-width: 768px) {
+    height: auto;
+  }
+}
+
+.degrees {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+
+  &:after {
+    content: '\00b0';
+  }
+}
+
+.temp-divider {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  padding: 0 @padding-step;
+}
+
+.header > .nav {
+  max-width: @max-app-width;
+  margin: auto;
+  padding-left: @padding-xs;
+  padding-right: @padding-xs;
+
+  @media (min-width: @max-app-width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.main {
+  position: relative;
+  max-width: 768px;
+  margin: auto;
+  height: 100%;
+  background-color: @white;
+  transition: transform 0.2s ease-in-out;
+
+  &-enter {
+    transform: translate3d(150%, 0, 0);
+    transition-delay: 0.05s;
+  }
+
+  &[data-leave=left].main-enter {
+    transform: translate3d(-150%, 0, 0);
+  }
+
+  &-enter.main-enter-active {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  &-leave {
+    transform: translate3d(150%, 0, 0);
+  }
+
+  &[data-leave=left].main-leave {
+    transform: translate3d(-150%, 0, 0);
+  }
+
+  @media (min-width: 768px) {
+    margin: @padding-xs auto;
+  }
+}

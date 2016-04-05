@@ -1,0 +1,56 @@
+@import '../App/variables.less';
+
+.weather-list-cnt {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  .weather-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid @grey;
+
+    &-item {
+      cursor: pointer;
+      background-color: @action-item-color;
+      border-top: 1px solid @grey;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:hover {
+        background-color: @action-item-hover-color;
+      }
+
+      &-name, &-min-max {
+        display: inline-block;
+        width: 50%;
+      }
+
+      &-min-max {
+        text-align: right;
+      }
+
+      .weather-icon {
+        padding-right: @padding-xs;
+        font-size: @font-size-large;
+      }
+
+      .weather-list-item-link {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: @padding-sm;
+
+        &, &:hover {
+          color: @dark-font-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

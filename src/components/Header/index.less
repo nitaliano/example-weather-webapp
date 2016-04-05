@@ -1,0 +1,60 @@
+@import '../App/variables.less';
+
+@header-height: 60px;
+@header-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+
+.header {
+  width: 100%;
+  height: @header-height;
+  background-color: @indigo;
+  box-shadow: @header-box-shadow;
+
+  .arrow-link {
+    + .title-name {
+      padding-left: 2 * @padding-step;
+    }
+
+    &, &:hover {
+      color: @light-font-color;
+    }
+  }
+
+  .title {
+    color: @light-font-color;
+    line-height: @header-height;
+
+    &-name {
+      transition: padding-left 0.2s ease-out;
+      padding-left: 0;
+    }
+  }
+
+  .actions {
+    position: relative;
+  }
+
+  .actions-icon {
+    color: @light-font-color;
+    font-size: @font-size-large;
+    line-height: @header-height;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
+
+  .actions-dropdown-list {
+    position: absolute;
+    box-shadow: @actions-dropdown-box-shadow;
+    top: @padding-lg;
+    right: 0;
+
+    .dropdown-item {
+      padding: @action-item-padding;
+      background-color: @action-item-color;
+
+      &:hover {
+        background-color: @action-item-hover-color;
+      }
+    }
+  }
+}
