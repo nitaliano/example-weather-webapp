@@ -23,5 +23,9 @@ npm run release
 ```
 
 # NOTES
-This project has only been tested on Chrome. I guarantee nothing on other browser
+* This project has only been tested on Chrome. I guarantee nothing on other browser
 environments.
+
+# TODOS
+* Add component for settings
+* Add React Native
