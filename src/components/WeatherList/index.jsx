@@ -45,10 +45,10 @@ class WeatherList extends React.Component {
   };
 
   get list() {
-    let items = [];
+    const items = [];
 
     this.props.weatherList.forEach((weatherItem, key) => {
-      let formattedWeather = weatherUtils.getFormattedWeather(weatherItem, key);
+      const formattedWeather = weatherUtils.getFormattedWeather(weatherItem, key);
       items.push(
         <WeatherListItem
           key={key}
@@ -72,7 +72,7 @@ class WeatherList extends React.Component {
           {this.list}
         </ul>
       </div>
-    )
+    );
   }
 }
 
@@ -85,7 +85,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     dispatch: dispatch
-  }
-};
+  };
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(WeatherList);

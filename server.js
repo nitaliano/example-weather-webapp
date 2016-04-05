@@ -19,5 +19,5 @@ app.get('*', function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log(util.format('Server listening on port %s', port));
+  console.log(util.format('Server listening on port %s', port)); // eslint-disable-line no-console
 });

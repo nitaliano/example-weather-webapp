@@ -11,6 +11,6 @@ const settings = {
   }
 };
 
-export default function (state = settings, action) {
+export default function (state = settings) {
   return state;
 }

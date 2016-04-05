@@ -1,4 +1,3 @@
-var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
@@ -7,10 +6,10 @@ var argv = require('yargs').argv;
 const IS_DEVELOP = !!argv.watch;
 
 const AUTOPREFIXER_BROWSERS = [
-    'Chrome >= 20',
-    'Firefox >= 24',
-    'Explorer >= 9',
-    'Safari >= 6'
+  'Chrome >= 20',
+  'Firefox >= 24',
+  'Explorer >= 9',
+  'Safari >= 6'
 ];
 
 const config = {

@@ -1,4 +1,4 @@
-import { WEATHER_SUCCESS, WEATHER_FAILURE } from '../constants';
+import { WEATHER_SUCCESS } from '../constants';
 
 const weather = {
   city: '',
@@ -17,4 +17,4 @@ export default function (state = weather, action) {
     default:
       return state;
   }
-};
+}

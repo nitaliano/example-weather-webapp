@@ -5,6 +5,6 @@ const details = {
   hourly: []
 };
 
-export default function (state = details, action) {
+export default function (state = details) {
   return state;
 }

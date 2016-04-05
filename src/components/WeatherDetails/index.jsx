@@ -12,8 +12,8 @@ class WeatherDetails extends React.Component {
   };
 
   render() {
-    let dt = this.props.location.query.dt|0;
-    let selected = weatherUtils.getWeatherByTime(this.props.weatherList, dt);
+    const dt = this.props.location.query.dt|0;
+    const selected = weatherUtils.getWeatherByTime(this.props.weatherList, dt);
 
     if (!selected) {
       return (<div className="weather-details-cnt"></div>);

@@ -13,7 +13,7 @@ const header = {
 
 export default function (state = header, action) {
   switch (action.type) {
-    case LOCATION_CHANGE:
+    case LOCATION_CHANGE: {
       let title = header.title;
       let isBack = header.isBack;
 
@@ -26,6 +26,7 @@ export default function (state = header, action) {
         title: title,
         isBack: isBack
       });
+    }
     case ACTIONS_DROPDOWN_TOGGLE:
       return Object.assign({}, state, {
         isActionsDropdownVisible: !state.isActionsDropdownVisible

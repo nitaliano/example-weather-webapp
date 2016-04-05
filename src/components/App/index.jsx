@@ -15,11 +15,11 @@ class App extends React.Component {
   }
 
   render() {
-    let childProps = this.props.children.props;
-    
+    const childProps = this.props.children.props;
+
     let transitionFlow = 'left';
     if (childProps.location.pathname !== '/') {
-      transitionFlow = "right";
+      transitionFlow = 'right';
     }
 
     let key = childProps.location.pathname;

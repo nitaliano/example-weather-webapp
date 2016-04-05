@@ -44,10 +44,10 @@ export default class WeatherTimeline extends React.Component {
   };
 
   get list() {
-    let items = [];
+    const items = [];
 
     this.props.weatherList.forEach((weatherItem, key) => {
-      let formattedItem = weatherUtils.getFormattedWeather(weatherItem, key);
+      const formattedItem = weatherUtils.getFormattedWeather(weatherItem, key);
 
       items.push(
         <WeatherTimelineItem

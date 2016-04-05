@@ -1,5 +1,3 @@
-import { OPEN_WEATHER_BASE_IMG_URL } from '../constants';
-
 const DAY_ENUM = {
   0: 'Sunday',
   1: 'Monday',
@@ -17,8 +15,8 @@ const TODAY_ENUM = {
 
 const weatherUtils = {
   getFormattedWeather: function (item, indexInList) {
-    let date = new Date(item.dt * 1000);
-    let dayName = TODAY_ENUM[indexInList] || DAY_ENUM[date.getDay()];
+    const date = new Date(item.dt * 1000);
+    const dayName = TODAY_ENUM[indexInList] || DAY_ENUM[date.getDay()];
 
     return {
       index: indexInList,
@@ -42,7 +40,7 @@ const weatherUtils = {
     }
 
     for (let i = 0; i < weatherList.length; i++) {
-      let weather = weatherList[i];
+      const weather = weatherList[i];
 
       if (weather && dt === weather.dt) {
         selected = {

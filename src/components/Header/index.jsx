@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { connect, bindActionCreators } from 'react-redux';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Dropdown from '../Dropdown';
 import { actionsDropdownToggle } from '../../actions';
@@ -24,17 +24,17 @@ class Header extends React.Component {
   }
 
   onActionsItemClick() {
-    console.log(e);
+    // TODO: Do something with actions here
   }
 
   get title() {
     let arrow;
     if (this.props.isBack) {
-        arrow = (
-          <Link className="arrow-link" to="/">
-            <i className="fa fa-arrow-left"></i>
-          </Link>
-        );
+      arrow = (
+        <Link className="arrow-link" to="/">
+          <i className="fa fa-arrow-left"></i>
+        </Link>
+      );
     }
 
     return (

@@ -3,8 +3,8 @@ import './index.less';
 
 class DropdownItem extends React.Component {
   static propTypes = {
-     title: PropTypes.string.isRequired,
-     onClick: PropTypes.func
+    title: PropTypes.string.isRequired,
+    onClick: PropTypes.func
   };
 
   render() {
@@ -12,7 +12,7 @@ class DropdownItem extends React.Component {
       <li className="dropdown-item" onClick={this.props.onClick}>
         <span className="dropdown-item-title">{this.props.title}</span>
       </li>
-    )
+    );
   }
 }
 
@@ -31,7 +31,7 @@ export default class Dropdown extends React.Component {
   };
 
   get list() {
-    let list = [];
+    const list = [];
 
     this.props.options.forEach((option, key) => {
       list.push(
