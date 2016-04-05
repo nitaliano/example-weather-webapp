@@ -6,7 +6,7 @@
   "main": "./server.js",
   "scripts": {
     "test": "",
-    "lint": "node_modules/.bin/eslint --ext .jsx,.js src/** server.js webpack.config.js",
+    "lint": "node_modules/.bin/eslint --ext .jsx,.js src/** *.js",
     "develop": "node_modules/.bin/webpack --watch",
     "release": "node_modules/.bin/webpack -p"
   },
