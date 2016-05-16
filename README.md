@@ -22,6 +22,12 @@ npm run develop
 npm run release
 ```
 
+# Lint
+
+```
+npm run lint
+```
+
 # Start Development Server
 
 ```
@@ -33,5 +39,4 @@ node .
 environments.
 
 # TODOS
-* Add component for settings
 * Add React Native
