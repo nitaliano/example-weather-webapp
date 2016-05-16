@@ -20,6 +20,7 @@ body {
   font-family: Colfax;
   color: @dark-font-color;
   background-color: @body-bg;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -42,7 +43,7 @@ h1, h2, h3, h4 {
 #app, .app-cnt {
   height: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 625px) {
     height: auto;
   }
 }
@@ -78,20 +79,31 @@ h1, h2, h3, h4 {
 
 .main {
   position: relative;
-  max-width: 768px;
-  margin: auto;
+  max-width: 625px;
+  margin: @padding-xs;
   height: 100%;
+  opacity: 1;
   background-color: @white;
-  transition: transform 0.2s ease-in-out;
+  transition: opacity 0.1s ease-out, transform 0.2s ease-out;
+
+  &-appear {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
+
+  &-appear-active {
+    opacity: 1;
+    transform: scale(1, 1);
+    transform-origin: 50% 0;
+  }
 
   &-enter {
-    transform: translate3d(150%, 0, 0);
-    transition-delay: 0.05s;
-    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    opacity: 0.14;
   }
 
   &[data-leave=left].main-enter {
-    transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 
   &-enter.main-enter-active {
@@ -100,14 +112,15 @@ h1, h2, h3, h4 {
   }
 
   &-leave {
-    transform: translate3d(150%, 0, 0);
+    opacity: 0.14;
+    transform: translate3d(100%, 0, 0);
   }
 
   &[data-leave=left].main-leave {
-    transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 625px) {
     margin: @padding-xs auto;
   }
 }

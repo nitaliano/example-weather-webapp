@@ -1,4 +1,4 @@
-import http from 'superagent/lib/client';
+import http from 'superagent';
 import { OPEN_WEATHER_BASE_URL } from '../constants';
 
 const apiUtils = {
@@ -6,10 +6,12 @@ const apiUtils = {
     return new Promise((resolve, reject) => {
       http
         .get(OPEN_WEATHER_BASE_URL + 'daily')
-        .query({ q: location })
-        .query({ units: units })
-        .query({ cnt: 7 })
-        .query({ appid: window.appConfig.openWeatherApiKey })
+        .query({
+          zip: location,
+          units: units,
+          cnt: 7,
+          appid: window.appConfig.openWeatherApiKey
+        })
         .end((err, res) => {
           if (err) {
             return reject(err);

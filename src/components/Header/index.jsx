@@ -2,10 +2,11 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Dropdown from '../Dropdown';
-import { actionsDropdownToggle } from '../../actions';
+import { actionsDropdownToggle, modalToggle } from '../../actions';
+import { ACTION_IDS, MODAL_TYPES } from '../../constants';
 import './index.less';
 
-class Header extends React.Component {
+export class Header extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     actionOptions: PropTypes.array,
@@ -23,8 +24,12 @@ class Header extends React.Component {
     this.props.dispatch(actionsDropdownToggle());
   }
 
-  onActionsItemClick() {
-    // TODO: Do something with actions here
+  onActionsItemClick(itemId) {
+    this.onActionsToggle();
+
+    if (ACTION_IDS.SETTINGS === itemId) {
+      this.props.dispatch(modalToggle(MODAL_TYPES.SETTINGS));
+    }
   }
 
   get title() {

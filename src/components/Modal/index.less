@@ -1,0 +1,43 @@
+@import '../App/variables.less';
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: @white;
+  transform-origin: 50% 100%;
+  transition-property: opacity, transform;
+  transition-duration: 0.2s, 0.2s;
+
+  &-content {
+    margin: auto;
+    max-width: 625px;
+  }
+
+  &-enter {
+    transform: scale(0.50) translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+    transition-timing-function: 'ease-out';
+  }
+
+  &-leave-active {
+    opacity: 0;
+    transform: scale(0) translate3d(0, 0, 0);
+    transition-timing-function: 'ease-in';
+  }
+
+  &-close {
+    cursor: pointer;
+    position: absolute;
+    top: @padding-xs;
+    right: @padding-xs;
+    font-size: @font-size-large;
+  }
+}

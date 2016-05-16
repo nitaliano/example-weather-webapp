@@ -52,6 +52,13 @@ const weatherUtils = {
     }
 
     return selected;
+  },
+
+  isValidZipCode: function (zipcode) {
+    if (zipcode && zipcode.length === 5) {
+      return true;
+    }
+    return false;
   }
 };
 

@@ -3,11 +3,13 @@ import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { connect } from 'react-redux';
 import { getWeather } from '../../actions';
 import Header from '../Header';
+import Modal from '../Modal';
 import './index.less';
 
-class App extends React.Component {
+export class App extends React.Component {
   static propTypes = {
-    settings: PropTypes.object
+    settings: PropTypes.object,
+    modal: PropTypes.object
   };
 
   componentWillMount() {
@@ -30,10 +32,15 @@ class App extends React.Component {
     return (
       <div className="app-cnt">
         <Header />
-        <ReactCSSTransitionGroup transitionName="main">
+
+        <ReactCSSTransitionGroup transitionName="main" transitionAppear={true} transitionAppear={0} transitionEnterTimeout={200} transitionLeaveTimeout={200}>
           <main key={key} data-leave={transitionFlow} className="main">
             {this.props.children}
           </main>
+        </ReactCSSTransitionGroup>
+
+        <ReactCSSTransitionGroup transitionName="modal" transitionEnterTimeout={200} transitionLeaveTimeout={200}>
+          <Modal key={this.props.modal.isHidden} isHidden={this.props.modal.isHidden} modalType={this.props.modal.modalType} />
         </ReactCSSTransitionGroup>
       </div>
     );
@@ -41,7 +48,7 @@ class App extends React.Component {
 }
 
 const AppContainer = connect(
-  (state) => ({ settings: state.settings }),
+  (state) => ({ settings: state.settings, modal: state.modal }),
   (dispatch) => ({ dispatch: dispatch })
 )(App);
 

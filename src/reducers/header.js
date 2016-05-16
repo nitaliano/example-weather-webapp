@@ -1,11 +1,15 @@
+import locationUtils from '../utils/locationUtils';
 import { ACTIONS_DROPDOWN_TOGGLE } from '../constants';
 import { LOCATION_CHANGE } from 'react-router-redux';
+import { ACTION_IDS } from '../constants';
+
 const header = {
   title: 'Awesome Weather Weekly',
   isActionsDropdownVisible: false,
   isBack: false,
   actionOptions: [
     {
+      id: ACTION_IDS.SETTINGS,
       title: 'Settings'
     }
   ]
@@ -17,7 +21,7 @@ export default function (state = header, action) {
       let title = header.title;
       let isBack = header.isBack;
 
-      if (location.pathname === '/details') {
+      if (locationUtils.getPathname() === '/details') {
         title = 'Awesome Weather Details';
         isBack = true;
       }

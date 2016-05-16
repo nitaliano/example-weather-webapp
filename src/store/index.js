@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import header from '../reducers/header';
 import weather from '../reducers/weather';
 import details from '../reducers/details';
+import modal from '../reducers/modal';
 import settings from '../reducers/settings';
 
 export default function (initialState) {
@@ -12,6 +13,7 @@ export default function (initialState) {
     weather: weather,
     details: details,
     settings: settings,
+    modal: modal,
     routing: routerReducer
   });
 

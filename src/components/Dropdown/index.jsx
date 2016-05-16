@@ -1,15 +1,21 @@
 import React, { PropTypes } from 'react';
+import domUtils from '../../utils/domUtils';
 import './index.less';
 
 class DropdownItem extends React.Component {
   static propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func
   };
 
+  onClick(e) {
+    this.props.onClick(domUtils.getData(e.currentTarget, 'itemId'));
+  }
+
   render() {
     return (
-      <li className="dropdown-item" onClick={this.props.onClick}>
+      <li className="dropdown-item" data-item-id={this.props.id} onClick={this.onClick.bind(this)}>
         <span className="dropdown-item-title">{this.props.title}</span>
       </li>
     );
@@ -35,7 +41,11 @@ export default class Dropdown extends React.Component {
 
     this.props.options.forEach((option, key) => {
       list.push(
-        <DropdownItem key={key} title={option.title} onClick={this.onDropdownItemClick} />
+        <DropdownItem
+          key={key}
+          id={option.id}
+          title={option.title}
+          onClick={this.props.onDropdownItemClick} />
       );
     });
 
